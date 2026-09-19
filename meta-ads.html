@@ -1,0 +1,1402 @@
+<!-- SYSTEM ICON VERSION
+     Replace your current HTML with this version.
+     Icons are inline SVG — no external icon library required.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Join ~Royal Predictor - India's prediction channel. Free access to predictions & daily updates.">
+
+<title>~Royal Predictor | Join Now</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg-dark:#0a0e0a;
+    --bg-terminal:#0d120d;
+    --green:#00ff41;
+    --green-dim:#00cc33;
+    --green-glow:rgba(0,255,65,.5);
+    --green-soft:rgba(0,255,65,.08);
+    --green-border:rgba(0,255,65,.25);
+    --text-primary:#c8ffc8;
+    --text-secondary:#6b9b6b;
+    --red:#ff3b3b;
+    --red-glow:rgba(255,59,59,.5);
+    --yellow:#ffd700;
+    --yellow-glow:rgba(255,215,0,.5);
+}
+
+body{
+    font-family:'JetBrains Mono','Courier New',monospace;
+    background:var(--bg-dark);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+    color:var(--text-primary);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,.15) 0px,
+        rgba(0,0,0,.15) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none;
+    z-index:999;
+    opacity:.4;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(0,255,65,.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,255,65,.03) 1px,transparent 1px);
+    background-size:40px 40px;
+    pointer-events:none;
+}
+
+.terminal-window{
+    max-width:620px;
+    width:100%;
+    background:var(--bg-terminal);
+    border:1px solid var(--green-border);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:
+        0 0 30px rgba(0,255,65,.15),
+        0 0 80px rgba(0,255,65,.05),
+        0 20px 50px rgba(0,0,0,.8);
+    position:relative;
+    z-index:1;
+    animation:terminalBoot .6s ease-out;
+}
+
+@keyframes terminalBoot{
+    0%{
+        opacity:0;
+        transform:scale(.96);
+        filter:blur(4px);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+}
+
+.terminal-bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 16px;
+    background:#0a120a;
+    border-bottom:1px solid var(--green-border);
+}
+
+.terminal-dots{
+    display:flex;
+    gap:8px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.dot-red{
+    background:#ff5f56;
+    box-shadow:0 0 6px rgba(255,95,86,.6);
+}
+
+.dot-yellow{
+    background:#ffbd2e;
+    box-shadow:0 0 6px rgba(255,189,46,.6);
+}
+
+.dot-green{
+    background:#27c93f;
+    box-shadow:0 0 6px rgba(39,201,63,.6);
+}
+
+.terminal-title{
+    font-size:.75rem;
+    color:var(--text-secondary);
+    margin-left:8px;
+    letter-spacing:.5px;
+}
+
+.terminal-title::before{
+    content:'> ';
+    color:var(--green);
+}
+
+.terminal-body{
+    padding:20px 18px;
+}
+
+/* SYSTEM ICON */
+
+.system-icon{
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 10px;
+    color:var(--green);
+    filter:drop-shadow(0 0 12px var(--green-glow));
+    animation:float 3s ease-in-out infinite;
+}
+
+.system-icon svg{
+    width:100%;
+    height:100%;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
+}
+
+.boot-line{
+    font-size:.75rem;
+    color:var(--text-secondary);
+    margin-bottom:3px;
+    opacity:0;
+    animation:typeIn .3s ease forwards;
+}
+
+.boot-line:nth-child(1){animation-delay:.1s}
+.boot-line:nth-child(2){animation-delay:.3s}
+.boot-line:nth-child(3){animation-delay:.5s}
+
+@keyframes typeIn{
+    from{
+        opacity:0;
+        transform:translateX(-8px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.prompt{
+    color:var(--green);
+}
+
+.success{
+    color:var(--green);
+    font-weight:700;
+}
+
+.cursor{
+    display:inline-block;
+    width:8px;
+    height:14px;
+    background:var(--green);
+    vertical-align:middle;
+    margin-left:2px;
+    animation:blink 1s step-end infinite;
+}
+
+@keyframes blink{
+    0%,100%{opacity:1}
+    50%{opacity:0}
+}
+
+.term-divider{
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--green-border),
+        transparent
+    );
+    margin:16px 0;
+}
+
+.header-section{
+    text-align:center;
+    margin-bottom:16px;
+}
+
+h1{
+    font-size:1.9rem;
+    font-weight:800;
+    color:var(--green);
+    text-shadow:
+        0 0 10px var(--green-glow),
+        0 0 30px rgba(0,255,65,.3);
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.subhead{
+    font-size:.82rem;
+    color:var(--text-secondary);
+    line-height:1.6;
+    max-width:440px;
+    margin:auto;
+}
+
+.highlight{
+    color:var(--green);
+    font-weight:700;
+}
+
+/* STATUS */
+
+.status-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    background:var(--green-soft);
+    border:1px solid var(--green-border);
+    border-radius:8px;
+    padding:10px 14px;
+    margin-bottom:14px;
+    font-size:.75rem;
+}
+
+.status-item{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+    50%{
+        opacity:.5;
+        transform:scale(.85);
+    }
+}
+
+/* STATS */
+
+.stats-row{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:16px;
+}
+
+.stat-box{
+    flex:1;
+    min-width:90px;
+    background:rgba(0,255,65,.04);
+    border:1px solid var(--green-border);
+    border-radius:8px;
+    padding:11px 8px;
+    text-align:center;
+}
+
+.stat-number{
+    font-size:1.3rem;
+    font-weight:800;
+    color:var(--green);
+    text-shadow:0 0 10px var(--green-glow);
+}
+
+.stat-label{
+    font-size:.62rem;
+    color:var(--text-secondary);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-top:4px;
+}
+
+/* JOIN */
+
+.join-focus{
+    position:relative;
+    margin:18px 0;
+    padding:22px 16px;
+    background:radial-gradient(
+        ellipse at center,
+        rgba(0,255,65,.08),
+        transparent 70%
+    );
+    border-radius:12px;
+    text-align:center;
+}
+
+.join-focus::before{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:90%;
+    height:90%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(
+        circle,
+        rgba(0,255,65,.15),
+        transparent 60%
+    );
+    border-radius:50%;
+    pointer-events:none;
+    animation:spotlight 2s ease-in-out infinite;
+}
+
+@keyframes spotlight{
+    0%,100%{
+        opacity:.6;
+        transform:translate(-50%,-50%) scale(1);
+    }
+    50%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1.1);
+    }
+}
+
+.attention-text{
+    position:relative;
+    z-index:2;
+    font-size:.8rem;
+    color:var(--yellow);
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    text-shadow:0 0 12px var(--yellow-glow);
+}
+
+.arrow-down{
+    display:block;
+    margin-top:5px;
+    color:var(--green);
+    font-size:18px;
+    animation:bounceDown 1s infinite;
+}
+
+@keyframes bounceDown{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(6px)}
+}
+
+/* CTA */
+
+.cta-button{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    background:linear-gradient(
+        135deg,
+        #00ff41,
+        #00cc33
+    );
+    color:#0a0e0a;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:800;
+    font-size:1.2rem;
+    padding:22px 24px;
+    border:3px solid var(--green);
+    border-radius:12px;
+    text-decoration:none;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    overflow:hidden;
+    transition:.3s ease;
+    box-shadow:
+        0 0 30px rgba(0,255,65,.6),
+        0 0 60px rgba(0,255,65,.3);
+    animation:ctaBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes ctaBounce{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+            0 0 30px rgba(0,255,65,.6),
+            0 0 60px rgba(0,255,65,.3);
+    }
+
+    50%{
+        transform:scale(1.03) translateY(-3px);
+        box-shadow:
+            0 0 50px rgba(0,255,65,.9),
+            0 0 100px rgba(0,255,65,.5);
+    }
+}
+
+.cta-icon,
+.cta-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.cta-icon svg{
+    width:25px;
+    height:25px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.cta-arrow{
+    font-size:25px;
+}
+
+/* LIVE */
+
+.live-badge{
+    position:absolute;
+    top:-12px;
+    right:16px;
+    background:var(--red);
+    color:#fff;
+    font-size:.62rem;
+    font-weight:800;
+    padding:4px 10px;
+    border-radius:4px;
+    letter-spacing:1px;
+    box-shadow:0 0 15px var(--red-glow);
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.live-dot{
+    width:6px;
+    height:6px;
+    background:#fff;
+    border-radius:50%;
+    animation:pulse 1s infinite;
+}
+
+/* SOCIAL */
+
+.social-proof{
+    position:relative;
+    z-index:2;
+    margin-top:14px;
+    font-size:.72rem;
+    color:var(--text-secondary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.avatars{
+    display:flex;
+}
+
+.avatar{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    border:2px solid var(--bg-terminal);
+    margin-left:-8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#152015;
+    color:var(--green);
+}
+
+.avatar:first-child{
+    margin-left:0;
+}
+
+.avatar svg{
+    width:13px;
+    height:13px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+}
+
+/* URGENCY */
+
+.urgency-box{
+    background:rgba(255,59,59,.05);
+    border:1px solid rgba(255,59,59,.35);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    text-align:center;
+}
+
+.urgency-top{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.urgency-icon{
+    display:flex;
+    color:var(--red);
+}
+
+.urgency-icon svg{
+    width:18px;
+    height:18px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+}
+
+.urgency-title{
+    font-size:.78rem;
+    color:var(--red);
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.countdown-bar-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.countdown-bar-track{
+    flex:1;
+    height:10px;
+    background:rgba(255,59,59,.15);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.countdown-bar-fill{
+    height:100%;
+    width:100%;
+    background:linear-gradient(
+        90deg,
+        var(--red),
+        #ff6666
+    );
+    border-radius:10px;
+    transition:width 1s linear;
+}
+
+.countdown-seconds{
+    font-size:1.1rem;
+    font-weight:800;
+    color:var(--red);
+    min-width:42px;
+    text-align:right;
+}
+
+.urgency-sub{
+    font-size:.68rem;
+    color:var(--text-secondary);
+    margin-top:8px;
+}
+
+.warn{
+    color:var(--red);
+    font-weight:700;
+}
+
+/* COMMAND */
+
+.command-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:.72rem;
+    color:var(--text-secondary);
+    background:rgba(0,0,0,.3);
+    border:1px solid rgba(0,255,65,.1);
+    border-radius:6px;
+    padding:9px 12px;
+    margin-bottom:14px;
+}
+
+.cmd{
+    color:var(--text-primary);
+}
+
+/* FEATURES */
+
+.feature-list{
+    background:rgba(0,255,65,.03);
+    border:1px solid var(--green-border);
+    border-radius:8px;
+    padding:12px 14px;
+    margin-bottom:16px;
+}
+
+.feature-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:.76rem;
+    color:var(--text-primary);
+    padding:5px 0;
+    line-height:1.4;
+}
+
+.feature-icon{
+    width:17px;
+    height:17px;
+    flex-shrink:0;
+    color:var(--green);
+}
+
+.feature-icon svg{
+    width:100%;
+    height:100%;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    font-size:.65rem;
+    color:var(--text-secondary);
+    padding-top:14px;
+    border-top:1px solid rgba(0,255,65,.1);
+    line-height:1.6;
+}
+
+.secure{
+    color:var(--green);
+    font-weight:700;
+}
+
+.secure-icon{
+    display:inline-flex;
+    vertical-align:middle;
+}
+
+.secure-icon svg{
+    width:13px;
+    height:13px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:var(--green);
+    color:#0a0e0a;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.8rem;
+    font-weight:700;
+    padding:12px 22px;
+    border-radius:8px;
+    z-index:1000;
+    opacity:0;
+    transition:.4s ease;
+    white-space:nowrap;
+}
+
+.toast.show{
+    transform:translateX(-50%) translateY(0);
+    opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .terminal-body{
+        padding:14px 12px;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+
+    .system-icon{
+        width:44px;
+        height:44px;
+    }
+
+    .stat-number{
+        font-size:1.1rem;
+    }
+
+    .stat-label{
+        font-size:.56rem;
+    }
+
+    .cta-button{
+        font-size:.95rem;
+        padding:18px 16px;
+        letter-spacing:1px;
+    }
+
+    .feature-item{
+        font-size:.72rem;
+    }
+
+    .subhead{
+        font-size:.76rem;
+    }
+
+    .status-bar{
+        font-size:.68rem;
+        gap:8px;
+        padding:8px 10px;
+    }
+
+    .command-line{
+        font-size:.66rem;
+    }
+
+    .urgency-title{
+        font-size:.72rem;
+    }
+
+    .countdown-seconds{
+        font-size:1rem;
+    }
+
+    .live-badge{
+        font-size:.55rem;
+        padding:2px 6px;
+    }
+
+    .attention-text{
+        font-size:.72rem;
+    }
+
+    .join-focus{
+        padding:18px 12px;
+    }
+}
+
+@media(max-width:360px){
+
+    .stats-row{
+        gap:6px;
+    }
+
+    .stat-box{
+        min-width:70px;
+        padding:9px 4px;
+    }
+
+    .stat-number{
+        font-size:.95rem;
+    }
+
+    .cta-button{
+        font-size:.85rem;
+        padding:16px 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="terminal-window">
+
+    <div class="terminal-bar">
+
+        <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+        </div>
+
+        <span class="terminal-title">
+            root@royal-predictor: ~/join-now
+        </span>
+
+    </div>
+
+    <div class="terminal-body">
+
+        <!-- BOOT -->
+
+        <div class="boot-line">
+            <span class="prompt">$</span>
+            initializing royal_predictor.exe...
+        </div>
+
+        <div class="boot-line">
+            <span class="prompt">$</span>
+            channel_status:
+            <span class="success">[ACTIVE]</span>
+        </div>
+
+        <div class="boot-line">
+            <span class="prompt">$</span>
+            awaiting_user_click...
+            <span class="cursor"></span>
+        </div>
+
+        <div class="term-divider"></div>
+
+        <!-- HEADER -->
+
+        <div class="header-section">
+
+            <!-- Rocket System Icon -->
+            <span class="system-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2c4.5 1 7.5 4 8 8-2 1-4 2-6 2l-2 2-2-2-2-2c0-2 1-4 2-6 0 0 1-1 2-2z"/>
+                    <path d="M8 14l-3 3"/>
+                    <path d="M6 18l-2 2"/>
+                    <circle cx="15" cy="8" r="1"/>
+                    <path d="M9 17c-1 1-2 1-3 1"/>
+                </svg>
+
+            </span>
+
+            <h1>~ROYAL PREDICTOR</h1>
+
+            <p class="subhead">
+                India's fastest growing prediction channel.
+                Get <span class="highlight">accurate predictions</span>,
+                daily updates & exclusive insights.
+            </p>
+
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="status-bar">
+
+            <div class="status-item">
+                <span class="status-dot"></span>
+                <span>SYSTEM ONLINE</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-dot"></span>
+                <span>INDIA</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-dot"></span>
+                <span>16,285 MEMBERS</span>
+            </div>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-row">
+
+            <div class="stat-box">
+                <div class="stat-number">16K+</div>
+                <div class="stat-label">Members</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Updates</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free</div>
+            </div>
+
+        </div>
+
+        <!-- JOIN -->
+
+        <div class="join-focus">
+
+            <div class="attention-text">
+                DON'T MISS OUT
+                <span class="arrow-down">↓</span>
+            </div>
+
+            <a
+                href="https://t.me/+6NBCKPaYVwkxMGU1"
+                class="cta-button"
+                id="joinButton"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="live-badge">
+                    <span class="live-dot"></span>
+                    LIVE
+                </span>
+
+                <!-- Telegram/System Icon -->
+                <span class="cta-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 3L3 10l7 3 3 7 8-17z"/>
+                        <path d="M10 13l5-5"/>
+                    </svg>
+
+                </span>
+
+                <span id="buttonText">
+                    JOIN TELEGRAM CHANNEL
+                </span>
+
+                <span class="cta-arrow">→</span>
+
+            </a>
+
+            <div class="social-proof">
+
+                <div class="avatars">
+
+                    <span class="avatar">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="3"/>
+                            <path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/>
+                        </svg>
+                    </span>
+
+                    <span class="avatar">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="3"/>
+                            <path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/>
+                        </svg>
+                    </span>
+
+                    <span class="avatar">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="3"/>
+                            <path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"/>
+                        </svg>
+                    </span>
+
+                    <span class="avatar">+</span>
+
+                </div>
+
+                <span>
+                    <strong style="color:var(--green)">
+                        16,285+
+                    </strong>
+                    members already joined
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- URGENCY -->
+
+        <div class="urgency-box">
+
+            <div class="urgency-top">
+
+                <span class="urgency-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3l10 18H2L12 3z"/>
+                        <path d="M12 9v5"/>
+                        <path d="M12 17h.01"/>
+                    </svg>
+
+                </span>
+
+                <span
+                    class="urgency-title"
+                    id="urgencyTitle"
+                >
+                    Limited Time Access
+                </span>
+
+            </div>
+
+            <div class="countdown-bar-wrap">
+
+                <div class="countdown-bar-track">
+                    <div
+                        class="countdown-bar-fill"
+                        id="countdownFill"
+                    ></div>
+                </div>
+
+                <span
+                    class="countdown-seconds"
+                    id="countdownSeconds"
+                >
+                    15s
+                </span>
+
+            </div>
+
+            <div
+                class="urgency-sub"
+                id="urgencySub"
+            >
+                <span class="warn">!</span>
+                Join button click karo — access turant milega
+            </div>
+
+        </div>
+
+        <!-- COMMAND -->
+
+        <div class="command-line">
+
+            <span class="prompt">$</span>
+
+            <span
+                class="cmd"
+                id="commandText"
+            >
+                connect --telegram --channel "RoyalPredictor"
+            </span>
+
+            <span class="cursor"></span>
+
+        </div>
+
+        <!-- FEATURES -->
+
+        <div class="feature-list">
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12l4 4L19 6"/>
+                    </svg>
+                </span>
+
+                <span>
+                    Accurate & timely predictions
+                </span>
+
+            </div>
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12l4 4L19 6"/>
+                    </svg>
+                </span>
+
+                <span>
+                    Expert analysis & insights
+                </span>
+
+            </div>
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12l4 4L19 6"/>
+                    </svg>
+                </span>
+
+                <span>
+                    Active community of 16,000+ members
+                </span>
+
+            </div>
+
+            <div class="feature-item">
+
+                <span class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12l4 4L19 6"/>
+                    </svg>
+                </span>
+
+                <span>
+                    No spam — only quality content
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span class="secure">
+
+                <span class="secure-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                        <path d="M8 10V7a4 4 0 018 0v3"/>
+                    </svg>
+
+                </span>
+
+                SECURE CONNECTION
+
+            </span>
+
+            • 16,285 members already joined
+
+            <br>
+
+            <span style="opacity:.6">
+                &copy; 2025 ~Royal Predictor • All systems operational
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="toast" id="toast">
+    ✓ Redirecting to Telegram...
+</div>
+
+<script>
+
+(function(){
+
+    const TOTAL_TIME = 15;
+    let timeLeft = TOTAL_TIME;
+    let interval = null;
+    let hasClicked = false;
+
+    const countdownFill =
+        document.getElementById('countdownFill');
+
+    const countdownSeconds =
+        document.getElementById('countdownSeconds');
+
+    const urgencyTitle =
+        document.getElementById('urgencyTitle');
+
+    const urgencySub =
+        document.getElementById('urgencySub');
+
+    const joinButton =
+        document.getElementById('joinButton');
+
+    const buttonText =
+        document.getElementById('buttonText');
+
+    const commandText =
+        document.getElementById('commandText');
+
+    const toast =
+        document.getElementById('toast');
+
+
+    function updateCountdown(){
+
+        const pct =
+            (timeLeft / TOTAL_TIME) * 100;
+
+        countdownFill.style.width =
+            pct + '%';
+
+        countdownSeconds.textContent =
+            timeLeft + 's';
+
+        if(timeLeft <= 5){
+
+            countdownFill.style.background =
+                'linear-gradient(90deg,#ff0000,#ff4444)';
+
+            countdownSeconds.style.color =
+                '#ff0000';
+        }
+    }
+
+
+    function startCountdown(){
+
+        clearInterval(interval);
+
+        interval = setInterval(function(){
+
+            timeLeft--;
+
+            updateCountdown();
+
+            if(timeLeft === 10){
+
+                urgencyTitle.textContent =
+                    'Hurry Up!';
+
+                urgencySub.innerHTML =
+                    '<span class="warn">!</span> ' +
+                    'Time kam ho raha hai — abhi join karo';
+            }
+
+            if(timeLeft === 5){
+
+                urgencyTitle.textContent =
+                    'ALMOST GONE!';
+
+                urgencySub.innerHTML =
+                    '<span class="warn">!</span> ' +
+                    'Sirf 5 second bache hain!';
+            }
+
+            if(timeLeft <= 0){
+
+                clearInterval(interval);
+
+                timeLeft = 0;
+
+                countdownFill.style.width = '0%';
+
+                countdownSeconds.textContent =
+                    '0s';
+
+                urgencyTitle.textContent =
+                    'TIME UP!';
+
+                urgencySub.innerHTML =
+                    '<span class="warn">!</span> ' +
+                    'Access limited — turant join karo!';
+
+                setTimeout(function(){
+
+                    timeLeft = TOTAL_TIME;
+
+                    countdownFill.style.background =
+                        'linear-gradient(90deg,var(--red),#ff6666)';
+
+                    countdownSeconds.style.color =
+                        'var(--red)';
+
+                    urgencyTitle.textContent =
+                        'Limited Time Access';
+
+                    urgencySub.innerHTML =
+                        '<span class="warn">!</span> ' +
+                        'Join button click karo — access turant milega';
+
+                    updateCountdown();
+
+                    startCountdown();
+
+                },2000);
+            }
+
+        },1000);
+    }
+
+
+    startCountdown();
+
+
+    joinButton.addEventListener(
+        'click',
+        function(){
+
+            if(hasClicked) return;
+
+            hasClicked = true;
+
+            buttonText.textContent =
+                'CONNECTING...';
+
+            const icon =
+                joinButton.querySelector('.cta-icon');
+
+            icon.innerHTML = `
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8"/>
+                    <path d="M12 8v4l3 2"/>
+                </svg>
+            `;
+
+            joinButton.querySelector(
+                '.cta-arrow'
+            ).textContent = '';
+
+            commandText.textContent =
+                'connecting to telegram...';
+
+            toast.classList.add('show');
+
+            urgencyTitle.textContent =
+                'CONNECTED!';
+
+            urgencySub.innerHTML =
+                '<span style="color:var(--green);font-weight:700;">' +
+                '[✓] Redirecting to Telegram...' +
+                '</span>';
+
+            setTimeout(function(){
+
+                toast.classList.remove('show');
+
+            },3000);
+
+        }
+    );
+
+})();
+
+</script>
+
+</body>
+</html>
